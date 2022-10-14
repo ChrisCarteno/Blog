@@ -1,15 +1,24 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import Link from 'next/link';
-const categories = [{name: "Cooking", slug: 'cooking'}, {name: "Traveling", slug: 'traveling'}]
+import { getCategories } from '../services';
+
 
 const Header = () => {
+    const [categories, setCategories] = useState([]);
+    
+      useEffect(() => {
+        getCategories()
+          .then((newCategories) => setCategories(newCategories))
+      }, []);
+      
   return (
     <div className="container mx-auto px-10 mb-8">
         <div className="border-b w-full inline-block border-blue-400 py-8">
             <div className="md:float-left block">
                 <Link href="/">
-                    <span className='cursor-pointer font-bold text-4x1 text-white'>
-                        GraphCms
+                    <span className='cursor-pointer font-bold text-4x1 text-white
+                    outline p-3'>
+                        Zia Mia
                     </span>
                 </Link>
             </div>
