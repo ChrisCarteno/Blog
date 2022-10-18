@@ -13,6 +13,7 @@
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-multi-carousel": "^2.8.2",
     "sass": "^1.55.0"
   },
   "devDependencies": {
